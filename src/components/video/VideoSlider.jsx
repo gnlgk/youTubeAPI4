@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import { Navigation } from 'swiper/modules';
+import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 
 
 const Videoslider = ({ id, title, videos }) => {
@@ -16,7 +16,14 @@ const Videoslider = ({ id, title, videos }) => {
                     spaceBetween={20}
                     slidesPerView={1}
                     navigation={true}
-                    modules={[Navigation]}
+                    autoplay={{
+                        delay: 2500,
+                        disableOnInteraction: false,
+                    }}
+                    pagination={{
+                        clickable: true,
+                    }}
+                    modules={[Autoplay, Pagination, Navigation]}
                     className={`mySwiper-${id}`}
                     breakpoints={{
                         600: {
